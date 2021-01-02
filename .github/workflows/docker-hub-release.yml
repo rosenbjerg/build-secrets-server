@@ -19,6 +19,10 @@ jobs:
         name: Build image
         run: |
           docker build \
-            --output "type=image,push=true" \
+            --output "type=image,push=false" \
             -t mrosenbjerg/secrets-server \
             -f ./Dockerfile .
+      -
+        name: Push new image
+        run: |
+          docker push mrosenbjerg/secrets-server
